@@ -10,7 +10,7 @@ const audioConfig = sdk.AudioConfig.fromAudioFileOutput(audioFile);
 
 speechConfig.speechSynthesisVoiceName = "en-US-DavisNeural";
 
-export default async function generateAudio(text) {
+export default function generateAudio(text) {
   let synthesizer = new sdk.SpeechSynthesizer(speechConfig, audioConfig);
 
   synthesizer.speakTextAsync(
