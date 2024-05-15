@@ -27,7 +27,7 @@ $audioInput = "output.wav"
 # Define output video path
 $outputVideo = "./video/final-video.mp4"
 
-Invoke-Expression -Command "ffmpeg -framerate 1/3 -i image/image-%d.jpg -c:v libx264 -pix_fmt yuv420p ./video/slideshow.mp4"
+Invoke-Expression -Command "ffmpeg -framerate 1/4 -i image/image-%d.jpg -c:v libx264 -pix_fmt yuv420p ./video/slideshow.mp4"
 # FFmpeg command to merge video and audio
 $ffmpegCommand = "ffmpeg -i `"$videoInput`" -i `"$audioInput`" -c copy -map 0:v:0 -map 1:a:0 -shortest `"$outputVideo`""
 
