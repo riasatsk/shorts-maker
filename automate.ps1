@@ -22,7 +22,7 @@ Set-Location -Path $mainDir
 
 # Define input video and audio paths
 $videoInput = "./video/slideshow.mp4"
-$audioInput = "output.wav"
+$audioInput = "output.mp3"
 
 # Define output video path
 $outputVideo = "./video/final-video.mp4"

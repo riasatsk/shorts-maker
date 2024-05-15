@@ -1,6 +1,6 @@
 import * as sdk from "microsoft-cognitiveservices-speech-sdk";
 
-let audioFile = "output.wav";
+let audioFile = "output.mp3";
 const speechConfig = sdk.SpeechConfig.fromSubscription(
   process.env.SPEECH_KEY,
   process.env.SPEECH_REGION
