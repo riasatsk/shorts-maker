@@ -16,7 +16,6 @@ export default async function Daydream(textInput, image_search) {
   await deleteFiles("./video");
 
   const text = await genText(textInput);
-
   await generateAudio(text);
 
   const duration = await getAudioDuration("./output.wav");
