@@ -22,14 +22,15 @@ Set-Location -Path $mainDir
 
 # Define input video and audio paths
 $videoInput = "./video/slideshow.mp4"
-$audioInput = "output.mp3"
+$audioInput = "output.wav"
 
 # Define output video path
-$outputVideo = "./video/final-video.mp4"
+$outputVideo = "./video/final-video.mkv"
 
-Invoke-Expression -Command "ffmpeg -framerate 1/4 -i image/image-%d.jpg -c:v libx264 -pix_fmt yuv420p ./video/slideshow.mp4"
+Invoke-Expression -Command "ffmpeg -framerate 1/4 -i image/image-%d.jpg -c:v libx264 -r 30 -pix_fmt yuv420p ./video/slideshow.mp4"
 # FFmpeg command to merge video and audio
-$ffmpegCommand = "ffmpeg -i `"$videoInput`" -i `"$audioInput`" -c copy -map 0:v:0 -map 1:a:0 -shortest `"$outputVideo`""
+$ffmpegCommand = "ffmpeg -i ./video/slideshow.mp4 -i output.wav -c:v copy -c:a aac -map 0:v:0 -map 1:a:0 -shortest./video/final-video.mkv"
+
 
 # Execute FFmpeg command
 Invoke-Expression -Command $ffmpegCommand
