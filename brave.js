@@ -14,7 +14,8 @@ export default async function downloadImageFromBrave(input, n) {
 
   // Navigate to Brave search page
   await page.goto(
-    `https://search.brave.com/images?q=${encodeURIComponent(input)}`
+    `https://search.brave.com/images?q=${encodeURIComponent(input)}`,
+    { timeout: 0 }
   );
   await page.setViewport({ width: 1366, height: 768 });
 
