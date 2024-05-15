@@ -1,0 +1,21 @@
+{
+  "name": "shorts-maker",
+  "version": "1.0.0",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@google/generative-ai": "^0.11.1",
+    "axios": "^1.6.8",
+    "cheerio": "^1.0.0-rc.12",
+    "microsoft-cognitiveservices-speech-sdk": "^1.36.0",
+    "music-metadata": "^7.14.0",
+    "puppeteer": "^22.8.1"
+  }
+}
