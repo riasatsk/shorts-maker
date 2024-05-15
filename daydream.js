@@ -1,5 +1,5 @@
-// import genText from "./util/ai.js";
-// import generateAudio from "./util/speech.js";
+import genText from "./util/ai.js";
+import generateAudio from "./util/speech.js";
 import downloadImageFromBrave from "./brave.js";
 import getAudioDuration from "./util/music.js";
 import deleteFiles from "./util/delete-file.js";
@@ -15,9 +15,9 @@ export default async function Daydream(textInput, image_search) {
   await deleteFiles("./image");
   await deleteFiles("./video");
 
-  // const text = await genText(textInput);
+  const text = await genText(textInput);
 
-  // await generateAudio(text);
+  await generateAudio(text);
 
   const duration = await getAudioDuration("./output.wav");
   const num = Math.ceil(duration / 4);
