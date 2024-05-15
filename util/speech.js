@@ -8,7 +8,7 @@ const speechConfig = sdk.SpeechConfig.fromSubscription(
 
 const audioConfig = sdk.AudioConfig.fromAudioFileOutput(audioFile);
 
-speechConfig.speechSynthesisVoiceName = "hi-IN-KunalNeural";
+speechConfig.speechSynthesisVoiceName = "hi-IN-AaravNeural";
 
 export default function generateAudio(text) {
   let synthesizer = new sdk.SpeechSynthesizer(speechConfig, audioConfig);
