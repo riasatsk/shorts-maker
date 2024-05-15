@@ -1,6 +1,13 @@
-import Daydream from "./daydream.js";
-import { Automate } from "./daydream.js";
+import genText from "./util/ai.js";
+import generateAudio from "./util/speech.js";
+import deleteFiles from "./util/delete-file.js";
 
-await Daydream("tell me 3 interesting fact about mahatma gandhi");
+await deleteFiles("./image");
+await deleteFiles("./video");
+
+const prompt = "tell me 3 interesting fact about mahatma gandhi";
+
+const text = await genText(prompt);
+generateAudio(text);
 
 // await Automate("mahatma gandhi");
