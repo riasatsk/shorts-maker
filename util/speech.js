@@ -8,7 +8,7 @@ const speechConfig = sdk.SpeechConfig.fromSubscription(
 
 const audioConfig = sdk.AudioConfig.fromAudioFileOutput(audioFile);
 
-speechConfig.speechSynthesisVoiceName = "en-US-AvaMultilingualNeural";
+speechConfig.speechSynthesisVoiceName = "en-US-DavisNeural";
 
 export default async function generateAudio(text) {
   let synthesizer = new sdk.SpeechSynthesizer(speechConfig, audioConfig);
