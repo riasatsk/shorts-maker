@@ -1,8 +1,9 @@
 import { launch } from "puppeteer";
 import * as cheerio from "cheerio";
-import { downloadImage } from "./util/download.js";
+import downloadImage from "./util/download.js";
+import countFiles from "./util/count-file.js";
 
-export async function downloadFromYandex(input) {
+export default async function downloadImageFromYandex(input, n) {
   const browser = await launch();
   const context = await browser.createBrowserContext();
 
@@ -23,7 +24,8 @@ export async function downloadFromYandex(input) {
 
   let counter = 0;
   for (const aTag of atags) {
-    if (counter >= 5) {
+    let nof = await countFiles("./image");
+    if (nof > n) {
       await browser.close();
       return;
     }

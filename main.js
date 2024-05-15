@@ -5,7 +5,7 @@ import deleteFiles from "./util/delete-file.js";
 await deleteFiles("./image");
 await deleteFiles("./video");
 
-const prompt = "tell me 3 interesting fact about mahatma gandhi in bangla";
+const prompt = "tell me 3 interesting fact about mahatma gandhi in hindi";
 
 const text = await genText(prompt);
 generateAudio(text);
