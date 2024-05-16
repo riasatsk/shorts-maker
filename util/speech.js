@@ -6,9 +6,17 @@ const speechConfig = sdk.SpeechConfig.fromSubscription(
   process.env.SPEECH_REGION
 );
 
+// const voices = [
+//   "bn-BD-NabanitaNeural",
+//   "bn-IN-TanishaaNeural",
+//   "en-US-AvaNeural",
+//   "en-US-DavisNeural",
+//   "en-US-AnaNeural",
+// ];
+
 const audioConfig = sdk.AudioConfig.fromAudioFileOutput(audioFile);
 
-speechConfig.speechSynthesisVoiceName = "hi-IN-AaravNeural";
+speechConfig.speechSynthesisVoiceName = "en-US-AvaNeural";
 
 export default function generateAudio(text) {
   let synthesizer = new sdk.SpeechSynthesizer(speechConfig, audioConfig);
