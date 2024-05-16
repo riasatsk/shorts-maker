@@ -12,7 +12,7 @@ $images = Get-ChildItem -Filter *.jpg
 # Loop through each image and apply the resize and extent operation
 foreach ($image in $images) {
     $filePath = $image.FullName
-    magick $filePath -resize 1280x -gravity center -background black -extent 1080x1980 $filePath
+    magick $filePath -resize 1080x -gravity center -background black -extent 1080x1980 $filePath
 }
 
 Write-Host "Resize and extent operation completed for all images."
@@ -32,5 +32,8 @@ Invoke-Expression -Command "ffmpeg -framerate 1/4 -i image/image-%d.jpg -c:v lib
 $ffmpegCommand = "ffmpeg -i ./video/slideshow.mp4 -i output.wav -c:v copy -c:a aac -map 0:v:0 -map 1:a:0 -shortest./video/final-video.mkv"
 
 
+
 # Execute FFmpeg command
 Invoke-Expression -Command $ffmpegCommand
+
+Invoke-Expression -Command "ffmpeg -i ./video/final-video.mkv  ./video/out.mp4"
