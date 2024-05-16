@@ -5,9 +5,9 @@ import getAudioDuration from "./util/music.js";
 import runPowerShellScript from "./util/powershell.js";
 
 const image_search = [
-  "virat kohli",
-  "virat and anushka",
-  "virat kohli playing",
+  "akbar",
+  "mughal king",
+  "yamuna river",
 ];
 
 await deleteFiles("./image");
